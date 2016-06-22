@@ -1,6 +1,6 @@
 /**
   * Created by markk on 21/06/2016.
   */
-class Product() {
+class Product(name: String) {
 
 }

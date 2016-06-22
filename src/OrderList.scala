@@ -1,6 +1,3 @@
-import scala.collection._
-import scala.collection.generic
-
 /**
   * Created by markk on 21/06/2016.
   */

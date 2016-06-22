@@ -24,7 +24,7 @@ object WarehouseUser {
 
   def doUI(list: OrderList): Unit = {
 
-    println("\n\n----------------------------\n")
+    println("\n----------------------------\n")
 
     var run: Boolean = true
     do {
@@ -42,16 +42,19 @@ object WarehouseUser {
 
   def doOrderUI(list: OrderList): Unit = {
 
-    println("-----------\n\nChoose the number of an order, or [0] to exit")
     var run: Boolean = true
-
     do {
-
+      println("-----------\nChoose the number of an order for information, or [0] to exit")
       val c = scala.io.StdIn.readInt()
-      list.getOrderAtIndex(c)
-
-
-      run = false
+      val size = list.orders.size
+      if (c == 0) {
+        run = false
+      } else if (c <= size) {
+        list.getOrderAtIndex(c)
+      } else {
+        //Catch the error TODO implement exception
+        println("PLease choose a valid number!!")
+      }
     } while(run)
   }
 }
