@@ -6,23 +6,29 @@ object WarehouseUser {
   //view list of orders, view information of order
   def main(args: Array[String]) {
 
-    doUI(genOrderList())
+    //doUI(genOrderList())
+    Data.getEmployees(); val ords = Data.getOrders();Data.getProducts();
+    for (order <- ords) {
+      TextFormatter.printOrderInfo(order)
+      TextFormatter.printOrderItems(order)
+
+    }
   }
 
-  def genOrderList(): OrderLine = {
-    new OrderLine()
+  def genOrderList(): Orders = {
+    Data.getOrders()
   }
 
-  def printList(list: OrderLine): Unit ={
+  def printList(list: Orders): Unit ={
     //print list of orders  CHANGE THIS TO CONTROL ITEMS?
     var i: Int = 0
-    for (item <- list.orders) {
+    for (item <- list) {
       i += 1
       println(i + ". " + item)
     }
   }
 
-  def doUI(list: OrderLine): Unit = {
+  def doUI(list: Orders): Unit = {
 
     println("\n----------------------------\n")
 
@@ -40,17 +46,17 @@ object WarehouseUser {
     println("Exiting...")
   }
 
-  def doOrderUI(list: OrderLine): Unit = {
+  def doOrderUI(list: Orders): Unit = {
 
     var run: Boolean = true
     do {
       println("-----------\nChoose the number of an order for information, or [0] to exit")
       val c = scala.io.StdIn.readInt()
-      val size = list.orders.size
+      val size = list.size
       if (c == 0) {
         run = false
       } else if (c <= size) {
-        list.getOrderAtIndex(c)
+        TextFormatter.printOrderInfo(list(c))
       } else {
         //Catch the error TODO implement exception
         println("PLease choose a valid number!!")

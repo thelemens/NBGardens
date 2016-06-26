@@ -1,9 +1,9 @@
 /**
   * Created by markk on 26/06/2016.
   */
-object StatusEnum extends Enumeration {
+object OrderStatus extends Enumeration {
 
-  val Yes, No = Value
+  val Ordered, Packing, Shipped = Value
 
 //  case object POStatus {
 //    val Ordered,Delivered = Value
@@ -17,4 +17,12 @@ object StatusEnum extends Enumeration {
 //
 //    val Okay, Damaged = Value
 //  }
+}
+
+object ProductStatus extends Enumeration {
+  val Okay, Damaged = Value
+
+  def set(): Unit = {
+    //Value =
+  }
 }
