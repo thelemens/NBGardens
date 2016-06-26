@@ -9,11 +9,11 @@ object WarehouseUser {
     doUI(genOrderList())
   }
 
-  def genOrderList(): OrderList = {
-    new OrderList()
+  def genOrderList(): OrderLine = {
+    new OrderLine()
   }
 
-  def printList(list: OrderList): Unit ={
+  def printList(list: OrderLine): Unit ={
     //print list of orders  CHANGE THIS TO CONTROL ITEMS?
     var i: Int = 0
     for (item <- list.orders) {
@@ -22,7 +22,7 @@ object WarehouseUser {
     }
   }
 
-  def doUI(list: OrderList): Unit = {
+  def doUI(list: OrderLine): Unit = {
 
     println("\n----------------------------\n")
 
@@ -40,7 +40,7 @@ object WarehouseUser {
     println("Exiting...")
   }
 
-  def doOrderUI(list: OrderList): Unit = {
+  def doOrderUI(list: OrderLine): Unit = {
 
     var run: Boolean = true
     do {

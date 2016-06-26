@@ -1,12 +1,7 @@
+
 /**
   * Created by markk on 21/06/2016.
   */
-object Order {
-  //Initialisation block
-  {
-    case class OrderStatus() extends Enumeration {
-
-    }
-  }
+case class Order(oid : Int, eid : Int, cid : Int, status : String, datePlaced: String, dateShipped: String) {
 
 }
