@@ -1,34 +1,33 @@
-import Data._
+import DataDump._
 /**
-  * Created by markk on 21/06/2016.
-  */
+  * Created by markk on 21/06/2016. */
 object WarehouseUser {
 
   //view list of orders, view information of order
-  def main(args: Array[String]
+  def main(args: Array[String]) : Unit = {
 
-    //doUI(genOrderList())
-    Data.getEmployees()
-    val ords = Data.getOrders();Data.getProducts();
-    for (order <- ords) {
-      TextFormatter.printOrderInfo(order)
-      TextFormatter.printOrderItems(order)
-
-    }
-  }
+    doUI(genOrderList())
+//    val emps = DataDump.getEmployees()
+//    val ords = DataDump.getOrders();DataDump.getProducts();
+//    for (order <- ords) {
+//      TextFormatter.printOrderInfo(order)
+//      TextFormatter.printOrderItems(order)
+//
+//    }
+ }
 
   def genOrderList(): Orders = {
-    Data.getOrders()
+    DataDump.getOrders()
   }
 
-  def printList(list: Orders): Unit ={
-    //print list of orders  CHANGE THIS TO CONTROL ITEMS?
-    var i: Int = 0
-    for (item <- list) {
-      i += 1
-      println(i + ". " + item)
-    }
-  }
+//  def printList(list: Orders): Unit ={
+//    //print list of orders  CHANGE THIS TO CONTROL ITEMS?
+//    var i: Int = 0
+//    for (item <- list) {
+//      i += 1
+//      println(i + ". " + item)
+//    }
+//  }
 
   def doUI(list: Orders): Unit = {
 
@@ -39,7 +38,7 @@ object WarehouseUser {
       println("\nEnter a command:\n1. View order list\n2. Quit\n")
       val i = scala.io.StdIn.readInt()
       i match {
-        case 1 => printList(list); doOrderUI(list)
+        case 1 => TextFormatter.printOrderList(list, 0); doOrderUI(list)
         case 2 => /* println("Existing"); */ run = false
         case whoops => println("Unexpected choice, try again")
       }

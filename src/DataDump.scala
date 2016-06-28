@@ -3,7 +3,7 @@ import scala.collection.mutable.ArrayBuffer
 /**
   * Created by markk on 26/06/2016.
   */
-object Data {
+object DataDump {
 
   def getOrders():  Orders = {
 
@@ -12,9 +12,9 @@ object Data {
     val ol3 = OrderLineItem(3, 1, true) //for order 2
     val ol4 = OrderLineItem(3, 2, true) // for order 3
 
-    val order1 = Order(1, 1, 1, OrderStatus.Ordered, "01012016", "0")
-    val order2 = Order(2, 1, 2, OrderStatus.Ordered, "02012016", "0")
-    val order3 = Order(3, 1, 2, OrderStatus.Ordered, "03012016", "0")
+    val order1 = Order(9071, 1, 1, OrderStatus.Ordered, "01012016", "0")
+    val order2 = Order(9072, 1, 2, OrderStatus.Ordered, "02012016", "0")
+    val order3 = Order(9073, 1, 2, OrderStatus.Ordered, "03012016", "0")
 
     order1.addOrderLineItem(ol1)
     order2.addOrderLineItem(ol2)
