@@ -12,7 +12,8 @@ object TextFormatter {
 
   def printOrderItems(order: Order) = {
 
-      println(order.orderLine + "\n")
+
+    println(order.orderLine + "\n")
 
   }
 

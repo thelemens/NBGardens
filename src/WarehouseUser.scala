@@ -1,13 +1,15 @@
+import Data._
 /**
   * Created by markk on 21/06/2016.
   */
 object WarehouseUser {
 
   //view list of orders, view information of order
-  def main(args: Array[String]) {
+  def main(args: Array[String]
 
     //doUI(genOrderList())
-    Data.getEmployees(); val ords = Data.getOrders();Data.getProducts();
+    Data.getEmployees()
+    val ords = Data.getOrders();Data.getProducts();
     for (order <- ords) {
       TextFormatter.printOrderInfo(order)
       TextFormatter.printOrderItems(order)
